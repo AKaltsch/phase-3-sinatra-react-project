@@ -16,4 +16,12 @@ class TeamController < Sinatra::Base
         team.to_json
     end
 
+    post '/teams' do
+        team = Team.create(
+          name: params[:name],
+          coach_id: params[:coach_id],
+        )
+        team.to_json
+    end
+
 end

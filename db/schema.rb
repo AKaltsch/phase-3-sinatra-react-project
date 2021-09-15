@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 2021_09_14_154510) do
     t.string "image_url"
     t.integer "rating"
     t.integer "team_id"
-    t.integer "coach_id"
     t.boolean "drafted"
   end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
+    t.integer "coach_id"
   end
 
 end

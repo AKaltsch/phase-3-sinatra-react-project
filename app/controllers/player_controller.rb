@@ -17,7 +17,6 @@ class PlayerController < Sinatra::Base
           rating: params[:rating],
           drafted: params[:drafted],
           team_id: params[:team_id],
-          coach_id: params[:coach_id]
         )
         player.to_json
     end
