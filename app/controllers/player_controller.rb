@@ -21,4 +21,10 @@ class PlayerController < Sinatra::Base
         player.to_json
     end
 
+    delete '/players/:id' do
+        delete = Player.find(params[:id])
+        delete.destroy
+        delete.to_json
+    end
+
 end
