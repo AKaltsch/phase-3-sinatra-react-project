@@ -2,16 +2,16 @@ puts "🌱 Seeding spices..."
 
 Coach.destroy_all 
 Player.destroy_all 
-Team.destroy_all 
+ 
 
 coach_sam = Coach.create(name: 'Sam')
 coach_alec = Coach.create(name: 'Alec')
 
-panthers = Team.create(name: 'Panthers', coach_id: coach_sam.id)
-niners = Team.create(name: '49ers', coach_id: coach_alec.id)
+panthers = Team.create(name: 'Panthers')
+niners = Team.create(name: '49ers')
 
-cmc = Player.create(name: 'Christian McCaffrey', image_url: 'https://tse2.mm.bing.net/th?id=OIP.Ru_v-RVOtO7Hs8p7aWC13wHaFL&pid=Api&P=0&w=286&h=201', rating: 9, drafted: false)
-deebo = Player.create(name: 'Deebo Samuel', image_url: 'https://tse3.mm.bing.net/th?id=OIP.k3P-39Bc1RcnKOVkFGL8JwHaFF&pid=Api&P=0&w=289&h=200', rating: 8, drafted: false)
+cmc = Player.create(name: 'Christian McCaffrey', image_url: 'https://tse2.mm.bing.net/th?id=OIP.Ru_v-RVOtO7Hs8p7aWC13wHaFL&pid=Api&P=0&w=286&h=201', rating: 9, drafted: false, team_id: niners.id)
+deebo = Player.create(name: 'Deebo Samuel', image_url: 'https://tse3.mm.bing.net/th?id=OIP.k3P-39Bc1RcnKOVkFGL8JwHaFF&pid=Api&P=0&w=289&h=200', rating: 8, drafted: false, team_id: niners.id)
 mahomes = Player.create(name: 'Patrick Mahomes', image_url: 'https://tse1.mm.bing.net/th?id=OIP.XLloVN8NMCMjMofvGjIdngHaFb&pid=Api&P=0&w=273&h=201', rating: 10, drafted: false)
 brady = Player.create(name: 'Tom Brady', image_url: 'https://tse3.mm.bing.net/th?id=OIP.03vPfRA9j2MlUILcu5yrBgHaFj&pid=Api&P=0&w=235&h=177', rating: 8, drafted: false)
 v_miller = Player.create(name: 'Von Miller', image_url: 'https://tse2.mm.bing.net/th?id=OIP.V1unyTt3CDcNeNGa24b0BgHaFj&pid=Api&P=0&w=229&h=173', rating: 6, drafted: false)
@@ -27,7 +27,7 @@ j_tucker = Player.create(name: 'Justin Tucker', image_url: 'https://tse3.mm.bing
 puts "✅ Done seeding!"
 
 
-# puts niners.players.map(&:name)
+puts niners.players.map(&:rating).sum()
 
 # puts coach.name
 
