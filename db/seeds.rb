@@ -1,8 +1,8 @@
 puts "🌱 Seeding spices..."
 
 Coach.destroy_all 
-Player.destroy_all 
- 
+Player.destroy_all
+Team.destroy_all 
 
 coach_sam = Coach.create(name: 'Sam')
 coach_alec = Coach.create(name: 'Alec')

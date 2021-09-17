@@ -4,14 +4,16 @@ class TeamController < Sinatra::Base
         teams = Team.all 
         teams.to_json
     end
-    
-    get '/teams/:id' do
-        team = Team.find(params[:id])
-        team.to_json
+
+
+    get '/team/scores/:name' do
+        team = Team.find(params[:name])
+        score = team.players.map(&:rating).sum()
+        score.to_json
     end
     
     delete '/teams/:id' do
-        team = Teams.find(params[:id])
+        team = Team.find(params[:id])
         team.destroy
         team.to_json
     end
